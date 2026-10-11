@@ -1,0 +1,155 @@
+@import 'tailwindcss';
+@import '@fontsource/baloo-2/600.css';
+@import '@fontsource/baloo-2/700.css';
+@import '@fontsource/baloo-2/800.css';
+@import '@fontsource/lobster/400.css';
+@import '@fontsource-variable/dm-sans';
+
+@theme {
+  --font-display: 'Baloo 2', ui-rounded, system-ui, sans-serif;
+  --font-script: 'Lobster', cursive;
+  --font-sans: 'DM Sans Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Sampled from the poster: the night sky behind the marquee is #391e6d. */
+  --color-night-950: #0f0624;
+  --color-night-900: #190a3b;
+  --color-night-800: #241052;
+  --color-night-700: #391e6d;
+  --color-night-600: #4c2a8c;
+  --color-night-500: #6a43b5;
+
+  --color-rani-700: #a3104f;
+  --color-rani-600: #c8176a;
+  --color-rani-500: #e0237a;
+  --color-rani-300: #ff7fb4;
+
+  --color-marigold-600: #e86a00;
+  --color-marigold-500: #ff8a1f;
+  --color-marigold-400: #ffa53d;
+
+  --color-haldi-500: #ffcc29;
+  --color-haldi-300: #ffe27a;
+  --color-haldi-100: #fff4c7;
+
+  --color-peacock-700: #0b6f73;
+  --color-peacock-500: #13a8ab;
+  --color-peacock-300: #5fd9d6;
+
+  --color-ivory: #fff8ec;
+  --color-sathe-red: #e53935;
+
+  --animate-flicker: flicker 2.6s ease-in-out infinite;
+  --animate-sway: sway 6s ease-in-out infinite;
+  --animate-twinkle: twinkle 3.2s ease-in-out infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-bulbs: bulbs 1.6s steps(2, jump-none) infinite;
+
+  @keyframes flicker {
+    0%, 100% { transform: scale(1) rotate(-1deg); opacity: 1; }
+    40% { transform: scale(1.06, 0.96) rotate(1.5deg); opacity: 0.92; }
+    70% { transform: scale(0.97, 1.04) rotate(-0.5deg); opacity: 1; }
+  }
+  @keyframes sway {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.25; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes bulbs {
+    0% { opacity: 1; }
+    100% { opacity: 0.45; }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-night-900 font-sans text-ivory antialiased;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgb(255 255 255 / 0.7) 50%, transparent 51%),
+      radial-gradient(1px 1px at 72% 8%, rgb(255 255 255 / 0.6) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 38% 62%, rgb(255 255 255 / 0.5) 50%, transparent 51%),
+      radial-gradient(1px 1px at 88% 44%, rgb(255 255 255 / 0.6) 50%, transparent 51%),
+      radial-gradient(1px 1px at 22% 86%, rgb(255 255 255 / 0.5) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 58% 28%, rgb(255 226 122 / 0.6) 50%, transparent 51%);
+    background-size: 420px 420px;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-haldi-300;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-display text-lg leading-none font-bold transition duration-200 select-none;
+}
+@utility btn-primary {
+  @apply btn bg-rani-500 text-white shadow-[0_8px_30px_-6px] shadow-rani-500/60 hover:-translate-y-0.5 hover:bg-rani-600 active:translate-y-0;
+}
+@utility btn-gold {
+  @apply btn bg-haldi-500 text-night-900 shadow-[0_8px_30px_-8px] shadow-haldi-500/60 hover:-translate-y-0.5 hover:bg-haldi-300;
+}
+@utility btn-ghost {
+  @apply btn border-2 border-ivory/30 text-ivory hover:border-haldi-300 hover:text-haldi-300;
+}
+
+/* Marquee bulbs on a lit ring, echoing the frame around "Diwali" on the poster. */
+@utility bulb-frame {
+  @apply relative rounded-[2.2rem] p-[11px];
+  background: linear-gradient(135deg, var(--color-haldi-500), var(--color-marigold-500) 45%, var(--color-rani-500));
+  &::before {
+    content: '';
+    @apply pointer-events-none absolute inset-0 animate-bulbs rounded-[2.2rem];
+    background:
+      radial-gradient(circle, var(--color-haldi-100) 0 2.6px, transparent 3.4px) 12px 0 / 24px 11px repeat-x,
+      radial-gradient(circle, var(--color-haldi-100) 0 2.6px, transparent 3.4px) 12px 100% / 24px 11px repeat-x,
+      radial-gradient(circle, var(--color-haldi-100) 0 2.6px, transparent 3.4px) 0 24px / 11px 24px repeat-y,
+      radial-gradient(circle, var(--color-haldi-100) 0 2.6px, transparent 3.4px) 100% 24px / 11px 24px repeat-y;
+    -webkit-mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    padding: 11px;
+  }
+}
+
+@utility card-glass {
+  @apply rounded-3xl border border-white/10 bg-white/[0.06] backdrop-blur-sm;
+}
+
+@utility kicker {
+  @apply font-script text-2xl text-haldi-300 sm:text-3xl;
+}
+
+.burst {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: burst 4.8s ease-out infinite;
+}
+
+@keyframes burst {
+  0% { transform: scale(0.2); opacity: 0; }
+  12% { opacity: 1; }
+  45% { transform: scale(1); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+

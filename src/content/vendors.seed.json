@@ -1,0 +1,210 @@
+[
+  {
+    "id": "the-urban-twine",
+    "name": "The Urban Twine",
+    "category": "fashion",
+    "description": "Contemporary Indo-Western fashion for women: chic co-ord sets, elegant suits and timeless dresses.",
+    "instagram": "https://www.instagram.com/theurbantwine",
+    "featured": false,
+    "visible": false
+  },
+  {
+    "id": "ag-creations-llc",
+    "name": "AG Creations",
+    "category": "jewelry",
+    "description": "Handmade couture jewelry, crafted piece by piece.",
+    "instagram": "https://www.instagram.com/handmadecouturebyagc",
+    "featured": false,
+    "visible": false
+  },
+  {
+    "id": "the-dessert-saga",
+    "name": "The Dessert Saga",
+    "category": "food",
+    "description": "Fusion Indian cakes by Parita: festive flavours, beautifully baked.",
+    "instagram": "https://www.instagram.com/thedessertsaga",
+    "featured": true,
+    "visible": true,
+    "logo": "media/vendors/the-dessert-saga.webp"
+  },
+  {
+    "id": "finomenon-investments",
+    "name": "Finomenon Investments",
+    "category": "services",
+    "description": "Washington-based investment advisory and financial planning with a family-office approach to personal wealth.",
+    "website": "https://finomenon.us/",
+    "featured": false,
+    "visible": false
+  },
+  {
+    "id": "smriti-designs-gift-shop",
+    "name": "Smriti Designs",
+    "category": "jewelry",
+    "description": "Desi gifts and festive keepsakes.",
+    "website": "https://smritidesigns.com",
+    "featured": false,
+    "visible": false
+  },
+  {
+    "id": "mint-and-martini",
+    "name": "Mint & Martini",
+    "category": "food",
+    "description": "Indo-Chinese favourites from the Seattle Indian restaurant.",
+    "instagram": "https://www.instagram.com/mintandmartiniseattle",
+    "featured": false,
+    "visible": true,
+    "logo": "media/vendors/mint-and-martini.webp"
+  },
+  {
+    "id": "vale-matcha",
+    "name": "Vale Matcha",
+    "category": "food",
+    "description": "Specialty iced matcha lattes, made with JAS-certified matcha from Shizuoka, Japan.",
+    "instagram": "https://www.instagram.com/valematcha",
+    "featured": false,
+    "visible": true
+  },
+  {
+    "id": "henna-by-jasmin",
+    "name": "Henna by Jasmin",
+    "category": "henna",
+    "description": "Festive henna designs by a professional mehndi artist.",
+    "website": "https://hennabyjasmin.com",
+    "featured": false,
+    "visible": false
+  },
+  {
+    "id": "bhojwani-foods",
+    "name": "Bhojwani's",
+    "category": "food",
+    "description": "Premium packed sweets and savouries from a family business in India. Relish the purity of Bharat.",
+    "instagram": "https://www.instagram.com/bhojwanifoodproducts",
+    "featured": false,
+    "visible": true,
+    "logo": "media/vendors/bhojwani-foods.webp"
+  },
+  {
+    "id": "ishhaara",
+    "name": "Ishhaara",
+    "category": "jewelry",
+    "description": "Statement Indian jewelry for the festive season.",
+    "instagram": "https://www.instagram.com/ishhaara",
+    "featured": false,
+    "visible": true,
+    "website": "https://www.ishhaara.com",
+    "logo": "media/vendors/ishhaara.webp"
+  },
+  {
+    "id": "the-rara",
+    "name": "The RaRa",
+    "category": "jewelry",
+    "description": "Handcrafted Indian artisan jewelry, from adorned bangles to intricate rings, with a modern twist.",
+    "instagram": "https://www.instagram.com/therara_artisanjewellery",
+    "featured": false,
+    "visible": false,
+    "website": "https://www.facebook.com/share/1ArcTH9ZoT/"
+  },
+  {
+    "id": "murgabi",
+    "name": "Murgabi",
+    "category": "fashion",
+    "description": "Jackets, bags and upcycled products. Crafting elegance, transcending borders.",
+    "website": "https://murgabi.in",
+    "featured": false,
+    "visible": true,
+    "logo": "media/vendors/murgabi.webp"
+  },
+  {
+    "id": "fuchsia-shoes",
+    "name": "Fuchsia Shoes",
+    "category": "fashion",
+    "description": "Handcrafted South Asian juttis that pair traditional embroidery with all-day comfort, with special Diwali pricing on select styles.",
+    "website": "https://www.fuchsiashoes.com",
+    "featured": false,
+    "visible": false
+  },
+  {
+    "id": "dhaga-by-shubh",
+    "name": "Dhaga by Shubh",
+    "category": "fashion",
+    "description": "Hand-curated handloom silk sarees from different states of India. Connecting you to your roots.",
+    "instagram": "https://www.instagram.com/dhagashubh",
+    "website": "https://dhagabyshub.com/",
+    "featured": true,
+    "visible": true,
+    "logo": "media/vendors/dhaga-by-shubh.webp"
+  },
+  {
+    "id": "kathmandu-momocha",
+    "name": "Kathmandu MomoCha",
+    "category": "food",
+    "description": "Himalayan momos in chicken (halal), pork, vegan, beef and cheese-ball varieties, plus pakoras and Himalayan fries.",
+    "instagram": "https://www.instagram.com/momochakathmandu",
+    "featured": true,
+    "visible": true,
+    "logo": "media/vendors/kathmandu-momocha.webp"
+  },
+  {
+    "id": "ojasvit",
+    "name": "Jalebi Baby",
+    "category": "food",
+    "description": "Hot, fresh jalebi, paani poori and bread pakoda.",
+    "instagram": "https://www.instagram.com/jalebibabyseattle",
+    "featured": true,
+    "visible": true,
+    "logo": "media/vendors/jalebi-baby.webp"
+  },
+  {
+    "id": "samburna-indian-restaurant",
+    "name": "Samburna Indian Restaurant",
+    "category": "food",
+    "description": "Dosa and South Indian favourites.",
+    "website": "https://samburna.com",
+    "featured": false,
+    "visible": false
+  },
+  {
+    "id": "rove",
+    "name": "Rove",
+    "category": "fashion",
+    "description": "Handloom sarees and blouses.",
+    "featured": false,
+    "visible": false
+  },
+  {
+    "id": "menoncollective",
+    "name": "Menon Collective",
+    "category": "fashion",
+    "description": "Bandhani dupattas and men’s kurtas.",
+    "instagram": "https://www.instagram.com/utharamenon_u",
+    "featured": false,
+    "visible": false
+  },
+  {
+    "id": "ela-chi",
+    "name": "ela-chi",
+    "category": "food",
+    "description": "Speciality chai, plus pastries and finger food.",
+    "featured": false,
+    "visible": true,
+    "logo": "media/vendors/ela-chi.webp"
+  },
+  {
+    "id": "veena-world-shruti-sathe-journeyvibe-travel",
+    "name": "Veena World × JourneyVibe Travel",
+    "category": "services",
+    "description": "Travel, explore, celebrate life: group tours and holiday planning.",
+    "website": "https://journeyvibe.travel",
+    "featured": false,
+    "visible": true,
+    "logo": "media/vendors/veena-world.webp"
+  },
+  {
+    "id": "saris-r-us",
+    "name": "Saris R'Us",
+    "category": "fashion",
+    "description": "Sustainable clothing: saris, linens, cottons and more.",
+    "logo": "media/vendors/saris-r-us.webp",
+    "visible": true
+  }
+]
