@@ -67,12 +67,16 @@ function ImageInput({ value, onChange, onUpload }: { value: string; onChange: (v
   const input = useRef<HTMLInputElement>(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
+  // The CDN can take a moment to serve a brand-new upload, so preview the local file meanwhile.
+  const [local, setLocal] = useState<{ url: string; for: string } | null>(null)
   const pick = async (file?: File) => {
     if (!file) return
     setBusy(true)
     setError('')
     try {
-      onChange(await onUpload(file))
+      const url = await onUpload(file)
+      setLocal({ url: URL.createObjectURL(file), for: url })
+      onChange(url)
     } catch (e) {
       setError((e as Error).message)
     } finally {
@@ -82,7 +86,11 @@ function ImageInput({ value, onChange, onUpload }: { value: string; onChange: (v
   return (
     <div className="flex items-start gap-3">
       <div className="grid size-20 shrink-0 place-items-center overflow-hidden rounded-xl bg-night-900/5 ring-1 ring-night-900/10">
-        {value ? <img src={resolveAsset(value)} alt="" className="size-full object-contain" /> : <ImagePlus className="size-6 text-night-900/30" />}
+        {value ? (
+          <img src={local?.for === value ? local.url : resolveAsset(value)} alt="" className="size-full object-contain" />
+        ) : (
+          <ImagePlus className="size-6 text-night-900/30" />
+        )}
       </div>
       <div className="min-w-0 flex-1 space-y-2">
         <input className={inputClass} value={value} onChange={(e) => onChange(e.target.value)} placeholder="Paste an image link, or upload →" />

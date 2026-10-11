@@ -388,6 +388,13 @@ function saveImage(payload) {
   return 'https://cdn.jsdelivr.net/gh/' + repo + '@' + result.commit.sha + '/' + path;
 }
 
+/** Run from the Apps Script editor to grant permissions and confirm the saved token works. */
+function checkImageUploads() {
+  var repo = github('/repos/' + DEFAULT_REPO);
+  var branch = github('/repos/' + DEFAULT_REPO + '/branches/' + DEFAULT_BRANCH);
+  Logger.log('Image uploads OK: %s, branch %s at %s', repo.full_name, branch.name, branch.commit.sha.slice(0, 7));
+}
+
 function promptForGithubToken() {
   var ui = SpreadsheetApp.getUi();
   var res = ui.prompt(
